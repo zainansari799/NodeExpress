@@ -1,0 +1,5 @@
+*.ts
+!*.d.ts
+
+# Make sure js files always get included
+!*.js
