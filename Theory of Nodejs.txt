@@ -1,8 +1,37 @@
-Nodejs:
-Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. 
-Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. 
-Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
-link: https://nodejs.org/en/
+1. npm install tsd
+this command is used to install all definition files.
+
+link: http://definitelytyped.org/tsd/
+
+2. tsd query node --action install
+
+this command install typings folder in your project, where node.d.ts file is exists
+
+
+3. tsd install jquery
+
+this command generate jquery folder where jquery file exists
+Note: Jquery folder generated in typings folder
+
+4. npm install gulp --save-dev
+e.g npm install filename --save-dev
+
+this command install gulp in your project and also add devdependencies
+
+5. npm install express --save
+e.g npm install filename --save
+
+this command install express in your project and also add dependencies
+
+6. npm install body-parser
+e.g npm install filename
+
+this command is used for install core modules.
+
+
+
+
+
 
 why we use gulp?
 
@@ -54,4 +83,22 @@ If the current middleware does not end the request-response cycle, it must call 
 
 Application-level middleware:
 Bind application-level middleware to an instance of the app object with app.use() and app.METHOD(), where METHOD is is the HTTP method of the request that it handles, such as GET, PUT, POST, and so on, in lowercase.
+
+Error-Handling Middleware:
+Error-handling middleware
+Error-handling middleware always takes four arguments. You must provide four arguments to identify it as an error-handling middleware. Even if you don’t need to use the next object, you must specify it to maintain the signature, otherwise it will be interpreted as regular middleware and fail to handle errors.
+Define error-handling middleware like other middleware, except with four arguments instead of three, specifically with the signature (err, req, res, next)):
+
+Mounting Middleware:
+Mounting a middleware at a path will cause the middleware function to be executed whenever the base of the requested path matches the path.
+Mounts the middleware function(s) at the path. If path is not specified, it defaults to “/”.
+
+
+Routing Middleware:
+Router-level middleware works just like application-level middleware except it is bound to an instance of express.Router().
+
+var router = express.Router();
+
+Load router-level middleware using router.use() and router.METHOD().
+
 
