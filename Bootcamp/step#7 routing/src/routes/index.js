@@ -1,8 +1,8 @@
 /// <reference path='./../../typings/tsd.d.ts' />
 var express = require('express');
 var router = express.Router();
-/* GET second page. */
+/* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('page2', { titleData: 'This is the second page' });
+    res.render('index', { title: 'Multi-page Express app using Typescript' });
 });
 module.exports = router;
